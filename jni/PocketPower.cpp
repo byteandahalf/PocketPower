@@ -20,6 +20,7 @@
 #include "mcpe/world/item/Item.h"
 #include "mcpe/world/item/ItemInstance.h"
 #include "mcpe/world/item/TileItem.h"
+#include "mcpe/world/item/TilePlanterItem.h"
 #include "mcpe/world/material/Material.h"
 #include "mcpe/world/entity/player/Player.h"
 #include "mcpe/world/Facing.h"
@@ -140,9 +141,8 @@ void Tile$initTiles() {
 
 void (*_Item$initItems)();
 void Item$initItems() {
-	Item::repeater = new RepeaterItem(100);
-	Item::items[356] = Item::repeater;
-	
+	Item::repeater = (Item*)((new TilePlanterItem(356, Tile::diode_off))->setNameID("diode")->setCategory(2)->setIcon("repeater", 0));
+
 	_Item$initItems();
 }
 
