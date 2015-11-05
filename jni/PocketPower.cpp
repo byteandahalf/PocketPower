@@ -140,7 +140,7 @@ void Tile$initTiles() {
 
 void (*_Item$initItems)();
 void Item$initItems() {
-	Item::repeater = (Item*)(new TilePlanterItem(100, Tile::diode_off));
+	Item::repeater = new TilePlanterItem(100, Tile::diode_off);
 	Item::repeater->setNameID("diode");
 	Item::repeater->setCategory(CreativeTab::ITEMS);
 	Item::repeater->setIcon("repeater", 0));
