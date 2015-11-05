@@ -26,7 +26,6 @@
 #include "mcpe/world/Facing.h"
 
 #include "mcperedstone/client/renderer/tileentity/PistonRenderer.h"
-#include "mcperedstone/world/item/RepeaterItem.h"
 #include "mcperedstone/world/level/tile/RedstoneWireTile.h"
 #include "mcperedstone/world/level/tile/NotGateTile.h"
 #include "mcperedstone/world/level/tile/RepeaterTile.h"
