@@ -20,12 +20,12 @@
 #include "mcpe/world/item/Item.h"
 #include "mcpe/world/item/ItemInstance.h"
 #include "mcpe/world/item/TileItem.h"
+#include "mcpe/world/item/TilePlanterItem.h"
 #include "mcpe/world/material/Material.h"
 #include "mcpe/world/entity/player/Player.h"
 #include "mcpe/world/Facing.h"
 
 #include "mcperedstone/client/renderer/tileentity/PistonRenderer.h"
-#include "mcperedstone/world/item/RepeaterItem.h"
 #include "mcperedstone/world/level/tile/RedstoneWireTile.h"
 #include "mcperedstone/world/level/tile/NotGateTile.h"
 #include "mcperedstone/world/level/tile/RepeaterTile.h"
@@ -140,9 +140,11 @@ void Tile$initTiles() {
 
 void (*_Item$initItems)();
 void Item$initItems() {
-	Item::repeater = new RepeaterItem(100);
-	Item::items[356] = Item::repeater;
-	
+	Item::repeater = new TilePlanterItem(100, Tile::diode_off);
+	Item::repeater->setNameID("diode");
+	Item::repeater->setCategory(CreativeTab::ITEMS);
+	Item::repeater->setIcon("repeater", 0));
+
 	_Item$initItems();
 }
 
